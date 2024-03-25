@@ -1,0 +1,14 @@
+.content {
+  flex: 1; /* This makes the content div take up all remaining space */
+  background-image: url("../assets/background.jpg"); /* Background image for the content */
+  background-size: 100% 100%; /* Ensure the background image covers the entire width of the content area */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-position: center; /* Center the background image */
+  background-attachment: fixed; /* Make the background image fixed as the content scrolls */
+  padding: 3em 2em 3em 2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2em;
+}

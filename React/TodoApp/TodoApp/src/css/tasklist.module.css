@@ -1,0 +1,16 @@
+.list_content {
+  display: flex;
+  justify-content: space-between;
+  width: 20em;
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.content_item {
+  cursor: pointer;
+}
+
+.content_button > button {
+  height: 100%;
+  width: auto;
+}

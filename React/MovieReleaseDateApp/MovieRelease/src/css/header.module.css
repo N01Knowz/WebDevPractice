@@ -1,0 +1,38 @@
+.logo {
+  width: 50px;
+}
+
+.header {
+  padding: 0.5em 1em 0.5em 1em;
+  background-color: blueviolet;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1000px) {
+  .logoContainer {
+    display: none;
+  }
+  .header {
+    justify-content: center;
+  }
+}
+
+.dateInputs {
+  display: flex;
+  padding: 0.5em;
+  gap: 3em;
+}
+.dateInputs > input {
+  padding: 0.5em;
+}
+
+.searchInput {
+  padding: 0.5em;
+}

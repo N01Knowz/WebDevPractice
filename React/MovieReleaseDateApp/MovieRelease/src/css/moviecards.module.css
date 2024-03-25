@@ -1,0 +1,34 @@
+.movieCard {
+  width: 20em;
+  height: 25em;
+  border: 1px solid black;
+  background-color: white;
+  padding: 1em;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.movieCard:hover {
+  transform: scale(1.1); /* Enlarge the card on hover */
+  height: auto;
+  overflow: visible;
+}
+
+.cardImage {
+  width: 100%;
+  height: 15em;
+}
+
+.cardTitle {
+  font-size: 2em;
+  font-weight: bold;
+}
+.cardReleaseDate {
+  font-weight: bold;
+}
+.cardOverview {
+  overflow: hidden; /* Hide overflowing text */
+}
+
