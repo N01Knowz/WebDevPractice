@@ -1,0 +1,6 @@
+this component folder doesn't have pages file so it cannot be viewed if you put it in the url
+
+if you want a component to be interactable and dynamic contents then put 'use client' to make it a client component. server component is the default.
+static cannot have interactions or dynamic contents
+
+We want to make sure that there the client components should be minimal so that the app will be faster.

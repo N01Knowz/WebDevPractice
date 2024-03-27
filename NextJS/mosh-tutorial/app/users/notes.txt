@@ -1,0 +1,1 @@
+page file is used to know which component to render if there are multiple files in this folder and folder name is the url.

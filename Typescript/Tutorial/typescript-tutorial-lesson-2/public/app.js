@@ -1,6 +1,6 @@
 import { ListTemplate } from "./classes/ListTemplate.js";
-import { Invoice } from "./classes/invoice.js";
-import { Payment } from "./classes/payment.js";
+import { Invoice } from "./classes/Invoice.js";
+import { Payment } from "./classes/Payment.js";
 //~~~Classes start
 const invOne = new Invoice("Mario", "Debt on eating too much mushroom", 250);
 const invTwo = new Invoice("Luigi", "Debt on eating too much turtles", 599);
@@ -65,6 +65,15 @@ form.addEventListener("submit", (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
+    // Tuple use it to spread the values.
+    // let values = [tofrom.value, details.value, amount.valueAsNumber]; // values array is not allowed to spread variable because it doesn't know if certain indexes should be the right data type.
+    let values = [tofrom.value, details.value, amount.valueAsNumber]; // Now allowed because it now knows that it has the right data type for the right index.
+    if (type.value == "invoice") {
+        doc = new Invoice(...values); // Array is not allowed because it doesn't know if it has the right data type to spread. Tuple is allowed because it knows it has the right data type spread.
+    }
+    else {
+        doc = new Payment(...values); // Array is not allowed because it doesn't know if it has the right data type to spread. Tuple is allowed because it knows it has the right data type spread.
+    }
     // // console.log(
     // //   type.value,
     // //   tofrom.value,
@@ -99,3 +108,47 @@ const varThree = {
     data: "Shaun",
 };
 //~~~Generics End
+//~~~Enum Start
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+var ResourceType2;
+(function (ResourceType2) {
+    ResourceType2["BOOK"] = "Ronaldo's Adventure";
+    ResourceType2["AUTHOR"] = "Ronaldo";
+    ResourceType2["FILM"] = "Ronaldo's World";
+    ResourceType2["DIRECTOR"] = "Ronaldo Arnibal";
+    ResourceType2["PERSON"] = "Arnibal";
+})(ResourceType2 || (ResourceType2 = {}));
+const resOne = {
+    // Since <T> is now a <object> [data: T;] is now = [data: object;]
+    uid: 1,
+    resourceType: ResourceType2.AUTHOR,
+    data: { title: "name of the wind" },
+};
+const resTwo = {
+    // Since <T> is now a <object> [data: T;] is now = [data: object;]
+    uid: 1,
+    resourceType: ResourceType2.PERSON,
+    data: { name: "Yoshi" },
+};
+console.log(resOne, resTwo);
+//~~~Enum End
+//~~~Tuples Start
+// Like array but certain index will have fixed data type
+let arr = ['ryu', 25, true];
+arr[0] = false;
+arr[1] = 'Yoshi';
+arr = [30, false, 'Yoshi'];
+let tup = ['Ryu', 25, false]; // 1st element should be string, 2nd should be number, 3rd should be boolean or it will throw an error.
+// tup[0] = 25; // Not Allowed because index 0 should be string
+tup[0] = "Ken"; // Allowed because index 0 should be string.
+let student;
+student = ['Chun-li', 28]; // Now we know that the first index should be a string and the 2nd is a number.
+// student = [25, 'Ken']; // Which makes this not possible and make sure that we don't mix up what should be in what index
+//~~~Tuples End
