@@ -1,0 +1,16 @@
+.header{
+    padding: 1em;
+    border-bottom: 2px solid black;
+    display: flex; gap: 1em;
+}
+
+.header>*>button {
+    padding-left: 2em;
+    padding-right: 2em;
+    height: 100%;
+    cursor: pointer;
+}
+
+main{
+    padding: 1em;
+}

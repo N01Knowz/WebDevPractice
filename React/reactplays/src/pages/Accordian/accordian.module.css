@@ -1,0 +1,29 @@
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.accordianItem{
+    width: 500px;
+    border: 2px solid black;
+}
+
+.accordianHeader{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    
+}
+
+.accordianContent {
+    padding: 1em;
+}
